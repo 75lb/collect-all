@@ -6,7 +6,7 @@
 <a name="module_collect-all"></a>
 ## collect-all
 <a name="exp_module_collect-all--collect"></a>
-### collect([options]) ⇒ <code>external:Transform</code> ⏏
+### collect([options]) ⇒ <code>[Duplex](https://nodejs.org/api/stream.html#stream_class_stream_duplex)</code> ⏏
 returns a Transform which will become readable only once all input is received
 
 **Kind**: Exported function  
