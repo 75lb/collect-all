@@ -16,11 +16,9 @@ test('collect', function (t) {
   stream.end()
 })
 
-test('.collect(options.through)', function (t) {
-  var stream = collect({
-    through: function (data) {
-      return data + 'yeah?'
-    }
+test('.collect(through)', function (t) {
+  var stream = collect(function (data) {
+    return data + 'yeah?'
   })
 
   stream.on('readable', function () {
