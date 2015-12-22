@@ -6,7 +6,7 @@
 
 <a name="module_collect-all"></a>
 ## collect-all
-Returns a stream which fires a callback and becomes readable once all input is received.
+Returns a stream which fires a callback and becomes readable once all input is received. Intended for buffer/string streams.
 
 <a name="exp_module_collect-all--collect"></a>
 ### collect([callback], [options]) ⇒ <code>[Duplex](https://nodejs.org/api/stream.html#stream_class_stream_duplex)</code> ⏏
@@ -15,7 +15,7 @@ Returns a stream which fires a callback and becomes readable once all input is r
 | Param | Type | Description |
 | --- | --- | --- |
 | [callback] | <code>function</code> | called with the collected json data, once available. The value returned by the callback will be passed downstream. |
-| [options] | <code>object</code> | passed to stream constructor |
+| [options] | <code>object</code> | passed to through stream constructor created to house the above callback function.. If the callback function returns a non-string/buffer value, set `objectMode: true`. |
 
 **Example**  
 An example command-line client script - JSON received at stdin is stamped with `received` then written to  stdout.
