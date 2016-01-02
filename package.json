@@ -16,7 +16,7 @@
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
   },
   "dependencies": {
-    "stream-connect": "~0.1.0",
+    "stream-connect": "^1.0.1",
     "stream-via": "~0.1.0",
     "typical": "^2.3.0"
   },
