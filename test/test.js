@@ -51,3 +51,15 @@ test('.collectAll(through): object mode', function (t) {
   stream.write({})
   stream.end({})
 })
+
+test('collect(through): readable object mode', function (t) {
+  var stream = collectAll(
+    function (data) {
+      t.strictEqual(data.toString(), 'yeah')
+      return { ok: true }
+    },
+    { readableObjectMode: true }
+  )
+  stream.end('yeah')
+  t.end()
+})
