@@ -1,7 +1,7 @@
 {
   "name": "collect-all",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Returns a stream which becomes readable once all input is received",
   "repository": "https://github.com/75lb/collect-all.git",
   "license": "MIT",
