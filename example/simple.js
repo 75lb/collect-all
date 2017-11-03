@@ -1,4 +1,4 @@
-var collectAll = require('../')
+const collectAll = require('../')
 process.stdin
   .pipe(collectAll(function (input) {
     input = 'received: ' + input

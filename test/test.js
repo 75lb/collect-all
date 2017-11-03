@@ -1,10 +1,10 @@
-var test = require('tape')
-var collectAll = require('../')
+const test = require('tape')
+const collectAll = require('../')
 
 test('collectAll', function (t) {
-  var stream = collectAll()
+  const stream = collectAll()
   stream.on('readable', function () {
-    var chunk = this.read()
+    const chunk = this.read()
     if (chunk) {
       t.strictEqual(chunk, 'onetwo')
       t.end()
@@ -17,12 +17,12 @@ test('collectAll', function (t) {
 })
 
 test('.collectAll(through)', function (t) {
-  var stream = collectAll(function (data) {
+  const stream = collectAll(function (data) {
     return data + 'yeah?'
   })
 
   stream.on('readable', function () {
-    var chunk = this.read()
+    const chunk = this.read()
     if (chunk) {
       t.strictEqual(chunk, 'cliveyeah?')
       t.end()
@@ -39,10 +39,10 @@ test('.collectAll(through): object mode', function (t) {
     })
     return collected
   }
-  var stream = collectAll(through, { objectMode: true })
+  const stream = collectAll(through, { objectMode: true })
 
   stream.on('readable', function () {
-    var collected = this.read()
+    const collected = this.read()
     if (collected) {
       t.deepEqual(collected, [ { received: true }, { received: true } ])
       t.end()
@@ -53,7 +53,7 @@ test('.collectAll(through): object mode', function (t) {
 })
 
 test('collect(through): readable object mode', function (t) {
-  var stream = collectAll(
+  const stream = collectAll(
     function (data) {
       t.strictEqual(data.toString(), 'yeah')
       return { ok: true }
