@@ -6,6 +6,9 @@
 
 <a name="module_collect-all"></a>
 
+***DEPRECATED. This package has been replaced by [stream-read-all](https://github.com/75lb/stream-read-all) which does the same job but with a Promises interface.***
+
+
 ## collect-all
 Returns a stream which fires a callback and becomes readable once all input is received.
 
@@ -14,14 +17,14 @@ By default the callback is invoked with a Buffer instance containing all concate
 <a name="exp_module_collect-all--collectAll"></a>
 
 ### collectAll([callback], [options]) ⇒ [<code>Duplex</code>](https://nodejs.org/api/stream.html#stream_class_stream_duplex) ⏏
-**Kind**: Exported function  
+**Kind**: Exported function
 
 | Param | Type | Description |
 | --- | --- | --- |
 | [callback] | <code>function</code> | Called once with the collected input data (by default a `Buffer` instance, or array in `objectMode`.). The value returned by this callback function will be passed downstream. |
 | [options] | <code>object</code> | [Stream options](https://nodejs.org/dist/latest-v5.x/docs/api/stream.html#stream_new_stream_readable_options) object, passed to the constructor for the stream returned by `collect-all`. If the callback function supplied returns a non-string/buffer value, set `options.objectMode` to `true`. |
 
-**Example**  
+**Example**
 An example command-line client script - string input received at stdin is stamped with `received` then written to  stdout.
 ```js
 var collectAll = require('collect-all')
